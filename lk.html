@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Личный кабинет — Космо-бочки">
+
+  <title>Личный кабинет — Космо-бочки</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">Kosmo-Bochki</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="order.html">Заявка</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link--active" href="lk.html" aria-current="page">
+              Личный кабинет
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="main">
+    <!-- Профиль -->
+    <section class="profile">
+      <h1 class="profile__title">Личный кабинет</h1>
+
+      <article class="profile-card">
+        <div class="profile-card__avatar" aria-hidden="true">👾</div>
+
+        <dl class="profile-card__info">
+          <div class="profile-card__row">
+            <dt class="profile-card__label">Имя:</dt>
+            <dd class="profile-card__value">Иван Космонавтов</dd>
+          </div>
+          <div class="profile-card__row">
+            <dt class="profile-card__label">Email:</dt>
+            <dd class="profile-card__value">ivan@kosmos.ru</dd>
+          </div>
+          <div class="profile-card__row">
+            <dt class="profile-card__label">Телефон:</dt>
+            <dd class="profile-card__value">+7 (999) 123-45-67</dd>
+          </div>
+          <div class="profile-card__row">
+            <dt class="profile-card__label">Адрес:</dt>
+            <dd class="profile-card__value">г. Байконур, ул. Гагарина, 1</dd>
+          </div>
+        </dl>
+      </article>
+    </section>
+
+    <!-- Последний заказ -->
+    <section class="last-order">
+      <h2 class="last-order__title">Последниe заказы</h2>
+
+      <div class="products-grid">
+        <article class="product-card">
+          <img class="product-card__image" src="./images/Space-Y.jpg" alt="Space-Y">
+          <h3 class="product-card__title">Space-Y</h3>
+          <p class="product-card__description">Лучший среди худших — худший среди лучших</p>
+          <p class="product-card__price">Цена: 1 557 234,34 руб.</p>
+          <button class="button button--primary product-card__button" type="button" data-product="Товар 1">Заказать еще раз</button>
+        </article>
+
+        <article class="product-card">
+          <img class="product-card__image" src="./images/bochka.jpg" alt="Бочка Яги">
+          <h3 class="product-card__title">Бочка Яги</h3>
+          <p class="product-card__description">Летательный аппарат субарбатильных полётов для истинных ценителей.</p>
+          <p class="product-card__price">Цена: 1 234 234 мухомор.</p>
+          <button class="button button--primary product-card__button" type="button" data-product="Товар 2">Заказать еще раз</button>
+        </article>
+
+        <article class="product-card">
+          <img class="product-card__image" src="./images/Luntik.jpg" alt="Инопланетное яйцо">
+          <h3 class="product-card__title">Инопланетное яйцо</h3>
+          <p class="product-card__description">Летательный аппарат первой внеземной жизни</p>
+          <p class="product-card__price">Цена: 1485 кг луц. грунта.</p>
+          <button class="button button--primary product-card__button" type="button" data-product="Товар 3">Заказать еще раз</button>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
+      <p class="site-footer__text">&copy; 2026 Kosmo-Bochki. Все права защищены.</p>
+      <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </footer>
+
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+      <input id="selected-product" name="selected-product" type="hidden">
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-name">Имя</label>
+        <input
+          class="order-form__input"
+          id="order-name"
+          name="name"
+          type="text"
+          placeholder="Введите ваше имя"
+          minlength="2"
+          autocomplete="given-name"
+          required
+        >
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-email">E-mail</label>
+        <input
+          class="order-form__input"
+          id="order-email"
+          name="email"
+          type="email"
+          placeholder="example@mail.ru"
+          autocomplete="email"
+          required
+        >
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-phone">Телефон</label>
+        <input
+          class="order-form__input"
+          id="order-phone"
+          name="phone"
+          type="tel"
+          inputmode="tel"
+          placeholder="+7 (900) 000-00-00"
+          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+          required
+        >
+        <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-date">Дата связи</label>
+        <input class="order-form__input" id="order-date" name="date" type="date">
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-topic">Тема заявки</label>
+        <select class="order-form__select" id="order-topic" name="topic" required>
+          <option value="">Выберите тему</option>
+          <option value="product">Заказ товара</option>
+          <option value="consultation">Консультация</option>
+          <option value="delivery">Доставка</option>
+        </select>
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-comment">Комментарий</label>
+        <textarea
+          class="order-form__textarea"
+          id="order-comment"
+          name="comment"
+          rows="4"
+          placeholder="Укажите дополнительную информацию"
+        ></textarea>
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label">
+          <input
+            class="order-form__checkbox"
+            id="order-agreement"
+            name="agreement"
+            type="checkbox"
+            required
+          >
+          Я согласен на обработку данных
+        </label>
+      </div>
+
+      <div class="order-form__actions">
+        <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
+        <button class="button button--primary" type="submit">Отправить заявку</button>
+      </div>
+    </form>
+  </dialog>
+
+  <p class="success-message" id="success-message" role="status" hidden>
+    Форма успешно отправлена!
+  </p>
+</body>
+</html>

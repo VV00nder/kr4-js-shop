@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Космо-бочки — карточка товара">
+
+  <title>Space-Y — Космо-бочки</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">Kosmo-Bochki</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="order.html">Заявка</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="lk.html">Личный кабинет</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="main">
+    <!-- Хлебные крошки -->
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current">Space-Y</span>
+    </nav>
+
+    <!-- Карточка товара -->
+    <article class="product">
+      <div class="product__media">
+        <span class="product__badge product__badge--hit">ХИТ</span>
+        <img class="product__image"
+             src="images/Space-Y.jpg"
+             alt="Космический корабль Space-Y">
+      </div>
+
+      <div class="product__info">
+        <h1 class="product__title">Space-Y</h1>
+
+        <p class="product__description">
+          Лучший среди худших — худший среди лучших. Многоразовый
+          космический корабль для межпланетных перелётов и доставки
+          бочек с грузом на орбиту.
+        </p>
+
+        <p class="product__price">1 957 294,34 руб.</p>
+
+        <div class="product__actions">
+          <button class="button button--primary" type="button">
+            Заказать
+          </button>
+          <button class="button button--secondary" type="button">
+            В избранное
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Таблица характеристик -->
+    <section class="product-specs">
+      <h2 class="product-specs__title">Характеристики</h2>
+      <div class="table-wrapper">
+      <table class="specs-table">
+        <caption>Характеристики товара</caption>
+        <tbody>
+          <tr class="specs-table__row">
+            <th class="specs-table__key" scope="row">Производитель</th>
+            <td class="specs-table__value">Space-Y Industries</td>
+          </tr>
+          <tr class="specs-table__row">
+            <th class="specs-table__key" scope="row">Тип</th>
+            <td class="specs-table__value">Многоразовый космический корабль</td>
+          </tr>
+          <tr class="specs-table__row">
+            <th class="specs-table__key" scope="row">Двигатель</th>
+            <td class="specs-table__value">Raptor-9, 9 шт.</td>
+          </tr>
+          <tr class="specs-table__row">
+            <th class="specs-table__key" scope="row">Тяга</th>
+            <td class="specs-table__value">7 600 кН</td>
+          </tr>
+          <tr class="specs-table__row">
+            <th class="specs-table__key" scope="row">Максимальная скорость</th>
+            <td class="specs-table__value">28 000 км/ч</td>
+          </tr>
+          <tr class="specs-table__row">
+            <th class="specs-table__key" scope="row">Дальность полёта</th>
+            <td class="specs-table__value">до Марса</td>
+          </tr>
+          <tr class="specs-table__row">
+            <th class="specs-table__key" scope="row">Полезная нагрузка</th>
+            <td class="specs-table__value">100 тонн</td>
+          </tr>
+          <tr class="specs-table__row">
+            <th class="specs-table__key" scope="row">Экипаж</th>
+            <td class="specs-table__value">до 7 человек</td>
+          </tr>
+          <tr class="specs-table__row">
+            <th class="specs-table__key" scope="row">Гарантия</th>
+            <td class="specs-table__value">10 космических лет</td>
+          </tr>
+          <tr class="specs-table__row">
+            <th class="specs-table__key" scope="row">Страна производства</th>
+            <td class="specs-table__value">Земля</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__text">&copy; 2026 Kosmo-Bochki. Все права защищены.</p>
+      <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </footer>
+</body>
+</html>
