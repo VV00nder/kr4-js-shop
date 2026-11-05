@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/data.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/catalog.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к основному содержимому</a>
@@ -70,121 +70,50 @@
       <aside class="catalog-filters catalog-layout__filters">
         <h2 class="catalog-filters__title">Фильтры</h2>
 
-        <form class="catalog-filters__form" action="#" method="get">
-          <fieldset class="catalog-filters__group">
-            <legend class="catalog-filters__legend">Категория</legend>
+        <section class="catalog-controls" aria-label="Управление каталогом">
+          <div class="catalog-controls__group">
+            <label for="catalog-search">Поиск товара</label>
+            <input
+              id="catalog-search"
+              class="catalog-controls__input"
+              type="search"
+              placeholder="Введите название товара"
+              autocomplete="off"
+            >
+          </div>
 
-            <label class="catalog-filters__label">
-              <input type="checkbox" name="category" value="all">
-              Все товары
-            </label>
+          <div class="catalog-controls__group">
+            <label for="category-filter">Категория</label>
+            <select id="category-filter" class="catalog-controls__select">
+              <option value="all">Все категории</option>
+              <option value="rockets">Ракеты</option>
+              <option value="planes">Самолеты и крылья</option>
+              <option value="balloons">Аэростаты</option>
+              <option value="magic">Сказочный транспорт</option>
+              <option value="aliens">Инопланетное</option>
+            </select>
+          </div>
 
-            <label class="catalog-filters__label">
-              <input type="checkbox" name="category" value="popular">
-              Популярные
-            </label>
-
-            <label class="catalog-filters__label">
-              <input type="checkbox" name="category" value="new">
-              Новинки
-            </label>
-          </fieldset>
-
-          <fieldset class="catalog-filters__group">
-            <legend class="catalog-filters__legend">Цена</legend>
-
-            <label class="catalog-filters__label" for="price-from">От</label>
-            <input class="catalog-filters__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
-
-            <label class="catalog-filters__label" for="price-to">До</label>
-            <input class="catalog-filters__input" id="price-to" name="price-to" type="number" min="0" placeholder="5000">
-          </fieldset>
-
-          <button class="button button--primary" type="submit">Применить</button>
-        </form>
+          <div class="catalog-controls__group">
+            <label for="sort-select">Сортировка</label>
+            <select id="sort-select" class="catalog-controls__select">
+              <option value="default">По умолчанию</option>
+              <option value="price-asc">Сначала дешевле</option>
+              <option value="price-desc">Сначала дороже</option>
+              <option value="title-asc">По названию А-Я</option>
+            </select>
+          </div>
+        </section>
       </aside>
 
       <section class="catalog-layout__products">
         <h2 class="catalog-layout__title">Список товаров</h2>
 
-        <div class="products-grid">
-        <article class="product-card product-card--featured">
-          <span class="product-card__badge product-card__badge--hit">ХИТ</span>
+        <p class="catalog-count" aria-live="polite"></p>
+        <p class="catalog-empty" hidden>По выбранным условиям товары не найдены.</p>
 
-          <h3 class="product-card__title">Space-Y</h3>
-          <img src="./images/Space-Y.jpg" alt="Космический корабль Space-Y" class="product-card__image">
-          <p class="product-card__description">Лучший среди худших - худший среди лучших</p>
-          <p class="product-card__price">Цена: 1 957 294,34 руб.</p>
-          <a class="button button--primary product-card__button" data-product="Товар 1" href="./product.html">
-            Подробнее
-          </a>
-        </article>
-
-        <article class="product-card product-card--featured">
-          <span class="product-card__badge product-card__badge--discount">СКИДКА</span>
-          <h3 class="product-card__title">Бочка Яги</h3>
-          <img src="./images/bochka.jpg" alt="Бочка" class = "product-card__image">
-          <p class="product-card__description">Летательный аппарат суборбитальных полетов для истинных ценителей.</p>
-          <p class="product-card__price">Цена: 1 234 284 мухомор.</p>
-          <a class="button button--primary product-card__button" data-product="Товар 2" href="./product.html">
-            Подробнее
-          </a>
-        </article>
-
-        <article class="product-card product-card--featured">
-          <h3 class="product-card__title">Инопланетное яйцо</h3>
-          <img src="./images/Luntik.jpg" alt="Яйцо" class="product-card__image">
-          <p class="product-card__description">Летательный аппарат первой внеземной жизни</p>
-          <p class="product-card__price">Цена: 1485 кг лун. грунта.</p>
-          <a class="button button--primary product-card__button" data-product="Товар 3" href="./product.html">
-            Подробнее
-          </a>
-        </article>
-      </div>
-      <div class="products-grid">
-        <article class="product-card product-card--featured">
-          <h3 class="product-card__title">Носовик</h3>
-          <img src="./images/noise.jpg" alt="Нос" class="product-card__image">
-          <p class="product-card__description">Как чихнет, так грянет.</p>
-          <p class="product-card__price">Цена: 1 323 434 соп.</p>
-          <a class="button button--primary product-card__button" data-product="Товар 4" href="./product.html">
-            Подробнее
-          </a>
-        </article>
-
-        <article class="product-card product-card--featured">
-          <h3 class="product-card__title">Крылья</h3>
-          <img src="./images/fly.jpg" alt="Крылья" class = "product-card__image">
-          <p class="product-card__description">Для тех, кто хочет приблизиться к звездам лично.</p>
-          <p class="product-card__price">Цена: 134 нерв. кл.</p>
-          <a class="button button--primary product-card__button" data-product="Товар 5" href="./product.html">
-            Подробнее
-          </a>
-        </article>
-
-        <article class="product-card product-card--featured">
-          <h3 class="product-card__title">Пухляш</h3>
-          <img
-              src="./images/Airlander.jpg"
-              srcset="./images/Airlander.jpg 480w,
-                      ./images/Airlander.jpg 640w,
-                      ./images/Airlander.jpg 960w"
-              sizes="(max-width: 639px) 100vw,
-                    (max-width: 1023px) 50vw,
-                    33vw"
-              alt="Пухляш"
-              width="640"
-              height="480"
-              loading="lazy"
-              class="product-card__image"
-            >
-          <p class="product-card__description">Мягкий и очень небезопасный аэростат.</p>
-          <p class="product-card__price">Цена: 168 л. метана</p>
-          <a class="button button--primary product-card__button" data-product="Товар 6" href="./product.html">
-            Подробнее
-          </a>
-        </article>
-      </div>
+        <!-- Карточки добавляются из js/catalog.js -->
+        <div class="products-grid" data-products-container></div>
       </section>
     </section>
   </main>

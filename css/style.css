@@ -829,3 +829,52 @@ main {
   background-color: #111827;
   border-radius: 8px;
 }
+
+/* ==========================================================================
+   11. Каталог на JavaScript: элементы управления, статус, сообщения формы
+   ========================================================================== */
+
+.catalog-controls {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.catalog-controls__group label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-weight: 700;
+}
+
+.catalog-controls__input,
+.catalog-controls__select {
+  width: 100%;
+  padding: var(--space-sm) 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+}
+
+.catalog-count {
+  font-weight: 700;
+}
+
+.catalog-empty {
+  padding: var(--space-md);
+  border-left: 4px solid var(--color-danger);
+  background-color: var(--color-surface);
+}
+
+.product-card__status {
+  margin: 0;
+  font-size: 14px;
+}
+
+.form-error {
+  margin: var(--space-xs) 0 0;
+  color: var(--color-danger);
+  font-size: 14px;
+}
+
+.form-message {
+  font-weight: 700;
+}
