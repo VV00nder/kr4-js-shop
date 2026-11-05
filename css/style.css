@@ -878,3 +878,71 @@ main {
 .form-message {
   font-weight: 700;
 }
+
+/* ==========================================================================
+   12. Корзина (cart.html)
+   ========================================================================== */
+
+.cart-list {
+  display: grid;
+  gap: var(--space-md);
+  padding: 0;
+  list-style: none;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--space-sm) var(--space-md);
+  align-items: center;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.cart-item__image {
+  grid-row: span 3;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.cart-item__title,
+.cart-item__price {
+  margin: 0;
+}
+
+.cart-item__actions,
+.cart-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.cart-total {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.promo-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  max-width: 480px;
+}
+
+.promo-form label {
+  font-weight: 700;
+}
+
+.promo-message {
+  width: 100%;
+  margin: 0;
+}
+
+.cart-counter {
+  font-weight: 700;
+}

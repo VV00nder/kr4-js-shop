@@ -96,7 +96,23 @@ function createProductCard(product) {
 
   const price = document.createElement('p');
   price.classList.add('product-card__price');
-  price.textContent = formatPrice(product.price);
+
+  // Если есть скидка - показываем бейдж и цену со скидкой
+  if (product.discountPercent > 0) {
+    const badge = document.createElement('span');
+    badge.classList.add('product-card__badge', 'product-card__badge--discount');
+    badge.textContent = `-${product.discountPercent}%`;
+    card.append(badge);
+
+    const finalPrice = product.price - product.price * product.discountPercent / 100;
+    price.textContent = `${formatPrice(Math.round(finalPrice))} (было ${formatPrice(product.price)})`;
+  } else {
+    price.textContent = formatPrice(product.price);
+  }
+
+  const rating = document.createElement('p');
+  rating.classList.add('product-card__status');
+  rating.textContent = `Рейтинг: ${product.rating} ★`;
 
   const status = document.createElement('p');
   status.classList.add('product-card__status');
@@ -114,7 +130,7 @@ function createProductCard(product) {
     button.textContent = 'Недоступно';
   }
 
-  card.append(image, title, description, price, status, button);
+  card.append(image, title, description, price, rating, status, button);
 
   return card;
 }
@@ -181,6 +197,9 @@ if (productsContainer) {
       return;
     }
 
+    // addToCart находится в cart.js
+    addToCart(selectedProduct.id);
+    button.textContent = 'Добавлено ✓';
     console.log(`Товар добавлен в корзину: ${selectedProduct.title}`);
   });
 }
