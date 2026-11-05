@@ -817,3 +817,15 @@ main {
     padding-top: var(--space-xs);
   }
 }
+
+/* ==========================================================================
+   10. Учебный блок проверки JavaScript (КР №4)
+   ========================================================================== */
+
+.product-output {
+  padding: 16px;
+  overflow-x: auto;
+  color: #f9fafb;
+  background-color: #111827;
+  border-radius: 8px;
+}

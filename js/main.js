@@ -61,3 +61,76 @@ if (orderDialog && orderForm) {
   closeDialogButton.addEventListener('click', () => orderDialog.close());
   orderForm.addEventListener('submit', handleOrderSubmit);
 }
+
+// ===============================
+// Практическая работа №15: основы JavaScript
+// ===============================
+
+console.log('Файл main.js подключён');
+console.log(product);
+console.table(product);
+
+// Форматирование цены: число -> строка с "руб."
+function formatPrice(price) {
+  return `${price} руб.`;
+}
+
+// Размер скидки в рублях
+function calculateDiscount(price, discountPercent) {
+  return price * discountPercent / 100;
+}
+
+// Итоговая цена с учетом скидки
+function calculateFinalPrice(price, discountPercent) {
+  const discountValue = calculateDiscount(price, discountPercent);
+
+  return price - discountValue;
+}
+
+// Статус товара по свойству isAvailable
+function getProductStatus(product) {
+  if (product.isAvailable) {
+    return 'В наличии';
+  }
+
+  return 'Нет в наличии';
+}
+
+// Краткое описание товара одной строкой
+function createProductSummary(product) {
+  const finalPrice = calculateFinalPrice(product.price, product.discountPercent);
+  const status = getProductStatus(product);
+
+  return `${product.title}: ${formatPrice(finalPrice)}. Статус: ${status}.`;
+}
+
+console.log(formatPrice(product.price));
+console.log(calculateDiscount(product.price, product.discountPercent));
+console.log(calculateFinalPrice(product.price, product.discountPercent));
+console.log(getProductStatus(product));
+
+// Проверка операторов сравнения и логических операторов
+const isExpensive = product.price > 1000000;
+const isGoodChoice = product.isAvailable && product.rating >= 4.5;
+console.log('Дорогой товар:', isExpensive);
+console.log('Хороший выбор:', isGoodChoice);
+
+const productSummary = createProductSummary(product);
+console.log(productSummary);
+
+// Вывод на страницу. Проверки нужны, т.к. main.js подключен на нескольких страницах
+const messageElement = document.querySelector('.js-message');
+const productOutputElement = document.querySelector('.product-output');
+
+if (messageElement) {
+  messageElement.textContent = 'JavaScript подключён корректно.';
+}
+
+if (productOutputElement) {
+  productOutputElement.textContent = productSummary;
+}
+
+// Небезопасный вариант (только для демонстрации, не использовать):
+// const unsafeExample = '<img src=x onerror=alert(1)>';
+// productOutputElement.innerHTML = unsafeExample;
+// Безопасно: productOutputElement.textContent = unsafeExample;
